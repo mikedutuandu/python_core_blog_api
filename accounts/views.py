@@ -3,14 +3,11 @@ from django.contrib.auth import (
     get_user_model,
     login,
     logout,
-
     )
 from django.shortcuts import render, redirect
-
 from .forms import UserLoginForm, UserRegisterForm
 
 def login_view(request):
-    print(request.user.is_authenticated())
     next = request.GET.get('next')
     title = "Login"
     form = UserLoginForm(request.POST or None)
@@ -26,7 +23,6 @@ def login_view(request):
 
 
 def register_view(request):
-    print(request.user.is_authenticated())
     next = request.GET.get('next')
     title = "Register"
     form = UserRegisterForm(request.POST or None)
@@ -40,12 +36,10 @@ def register_view(request):
         if next:
             return redirect(next)
         return redirect("/")
-
-    context = {
+    return render(request, "form.html", {
         "form": form,
         "title": title
-    }
-    return render(request, "form.html", context)
+    })
 
 
 def logout_view(request):
