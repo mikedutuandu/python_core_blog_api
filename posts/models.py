@@ -8,6 +8,8 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 
 
 from markdown_deux import markdown
@@ -92,6 +94,16 @@ class Post(models.Model):
         instance = self
         content_type = ContentType.objects.get_for_model(instance.__class__)
         return content_type
+
+
+    # VALIDATION------------------------------------------------
+    # def clean(self):
+    #     data = self.title
+    #     if "fred@example.com" != data:
+    #         # raise ValidationError(_('error title 1'))
+    #         raise ValidationError({"title":_('error title 2')})
+
+
 
 
 def create_slug(instance, new_slug=None):

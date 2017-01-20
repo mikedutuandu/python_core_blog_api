@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'markdown_deux',
     'pagedown',
     'rest_framework',
+    'bootstrap_pagination',
 
     # local apps
     'comments',

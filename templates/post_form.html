@@ -23,6 +23,7 @@ s
 
 <form method='POST' action='' enctype='multipart/form-data' novalidate>
     {% csrf_token %}
+{{ form.errors }}
 {% for field in form %}
    <div class="form-group">
         {{ field.errors }}
