@@ -8,9 +8,9 @@ from rest_framework.serializers import (
     ValidationError
     )
 
-from accounts.api.serializers import UserDetailSerializer
+from apps.accounts.api.serializers import UserDetailSerializer
 
-from comments.models import Comment
+from apps.comments.models import Comment
 
 User = get_user_model()
 

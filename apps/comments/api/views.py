@@ -21,12 +21,12 @@ from rest_framework.permissions import (
 
     )
 
-from posts.api.permissions import IsOwnerOrReadOnly
-from posts.api.pagination import PostLimitOffsetPagination, PostPageNumberPagination
+from apps.posts.api.permissions import IsOwnerOrReadOnly
+from apps.posts.api.pagination import PostLimitOffsetPagination, PostPageNumberPagination
 
 
 
-from comments.models import Comment
+from apps.comments.models import Comment
 
 
 

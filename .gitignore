@@ -1,14 +1,18 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-blog/__pycache__/
-posts/__pycache__/
-posts/api/__pycache__/
-posts/migrations/__pycache__/
-posts/templatetags/__pycache__/
-accounts/__pycache__/
-accounts/api/__pycache__/
-comments/__pycache__/
-comments/migrations/__pycache__/
-comments/api/__pycache__/
-posts/.DS_Store
+config/__pycache__/
+apps/posts/__pycache__/
+apps/posts/api/__pycache__/
+apps/posts/migrations/__pycache__/
+apps/posts/templatetags/__pycache__/
+apps/accounts/__pycache__/
+apps/accounts/api/__pycache__/
+apps/comments/__pycache__/
+apps/comments/migrations/__pycache__/
+apps/comments/api/__pycache__/
+apps/posts/.DS_Store
 
+.DS_Store
+apps/.DS_Store
+apps/accounts/.DS_Store
+apps/comments/.DS_Store

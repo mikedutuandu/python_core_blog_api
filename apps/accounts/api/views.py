@@ -12,11 +12,9 @@ from rest_framework.filters import (
         OrderingFilter,
     )
 
-from rest_framework.mixins import DestroyModelMixin, UpdateModelMixin
 from rest_framework.generics import (
     CreateAPIView,
-    DestroyAPIView,
-    ListAPIView, 
+    ListAPIView,
     UpdateAPIView,
     RetrieveAPIView,
     RetrieveUpdateAPIView
@@ -24,17 +22,11 @@ from rest_framework.generics import (
 from rest_framework.permissions import (
     AllowAny,
     IsAuthenticated,
-    IsAdminUser,
     IsAuthenticatedOrReadOnly,
 
     )
 
-from posts.api.permissions import IsOwnerOrReadOnly
-from posts.api.pagination import PostLimitOffsetPagination, PostPageNumberPagination
-
-
-
-
+from apps.posts.api.permissions import IsOwnerOrReadOnly
 
 User = get_user_model()
 

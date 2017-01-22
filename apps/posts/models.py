@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 from markdown_deux import markdown
-from comments.models import Comment
+from apps.comments.models import Comment
 
 from .utils import get_read_time
 # Create your models here.

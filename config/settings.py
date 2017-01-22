@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'bootstrap_pagination',
 
     # local apps
-    'comments',
-    'posts',
+    'apps.comments',
+    'apps.posts',
 
 ]
 
@@ -65,7 +65,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 LOGIN_URL = "/login/"
-ROOT_URLCONF = 'blog.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -199,7 +199,7 @@ JWT_AUTH = {
 
     'JWT_RESPONSE_PAYLOAD_HANDLER':
     # 'rest_framework_jwt.utils.jwt_response_payload_handler',
-    'accounts.api.jwt.jwt_response_payload_handler',
+    'apps.accounts.api.jwt.jwt_response_payload_handler',
 
     'JWT_SECRET_KEY': SECRET_KEY,
     'JWT_PUBLIC_KEY': None,

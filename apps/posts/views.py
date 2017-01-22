@@ -8,8 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from comments.forms import CommentForm
-from comments.models import Comment
+from apps.comments.forms import CommentForm
+from apps.comments.models import Comment
 from .forms import PostForm
 from .models import Post
 

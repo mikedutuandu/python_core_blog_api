@@ -1,6 +1,4 @@
 from django.db.models import Q
-
-
 from rest_framework.filters import (
         SearchFilter,
         OrderingFilter,
@@ -8,30 +6,20 @@ from rest_framework.filters import (
 from rest_framework.generics import (
     CreateAPIView,
     DestroyAPIView,
-    ListAPIView, 
-    UpdateAPIView,
+    ListAPIView,
     RetrieveAPIView,
     RetrieveUpdateAPIView
     )
-
-
-
 from rest_framework.permissions import (
     AllowAny,
-    IsAuthenticated,
-    IsAdminUser,
-    IsAuthenticatedOrReadOnly,
+)
 
-    )
-
-from posts.models import Post
-
-from .pagination import PostLimitOffsetPagination, PostPageNumberPagination
+from apps.posts.models import Post
+from .pagination import PostPageNumberPagination
 from .permissions import IsOwnerOrReadOnly
-
 from .serializers import (
-    PostCreateUpdateSerializer, 
-    PostDetailSerializer, 
+    PostCreateUpdateSerializer,
+    PostDetailSerializer,
     PostListSerializer
     )
 
