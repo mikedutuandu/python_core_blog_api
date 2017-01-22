@@ -32,7 +32,7 @@ def comment_delete(request, id):
         messages.success(request, "This has been deleted.")
         return HttpResponseRedirect(parent_obj_url)
 
-    return render(request, "confirm_delete.html", {
+    return render(request, "comments/confirm_delete.html", {
         "object": obj
     })
 
@@ -79,7 +79,7 @@ def comment_thread(request, id):
                             parent = parent_obj,
                         )
         return HttpResponseRedirect(new_comment.content_object.get_absolute_url())
-    return render(request, "comment_thread.html", {
+    return render(request, "comments/comment_thread.html", {
         "comment": obj,
         "form": form,
     })

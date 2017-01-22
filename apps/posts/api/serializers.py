@@ -1,6 +1,6 @@
-from accounts.api.serializers import UserDetailSerializer
-from comments.api.serializers import CommentSerializer
-from comments.models import Comment
+from apps.accounts.api.serializers import UserDetailSerializer
+from apps.comments.api.serializers import CommentSerializer
+from apps.comments.models import Comment
 from rest_framework.serializers import (
     HyperlinkedIdentityField,
     ModelSerializer,

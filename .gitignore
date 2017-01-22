@@ -16,3 +16,4 @@ apps/posts/.DS_Store
 apps/.DS_Store
 apps/accounts/.DS_Store
 apps/comments/.DS_Store
+apps/__pycache__/

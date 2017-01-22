@@ -26,7 +26,7 @@ def post_create(request):
         # message success
         messages.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
-    return render(request, "post_form.html", {
+    return render(request, "posts/post_form.html", {
         "form": form,
     })
 
@@ -70,7 +70,7 @@ def post_detail(request, slug=None):
 
     comments = instance.comments
 
-    return render(request, "post_detail.html", {
+    return render(request, "posts/post_detail.html", {
         "title": instance.title,
         "instance": instance,
         "share_string": share_string,
@@ -105,7 +105,7 @@ def post_list(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         queryset = paginator.page(paginator.num_pages)
 
-    return render(request, "post_list.html", {
+    return render(request, "posts/post_list.html", {
         "object_list": queryset,
         "title": "List",
         "page_request_var": page_request_var,
@@ -123,7 +123,7 @@ def post_update(request, slug=None):
         instance.save()
         messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
         return HttpResponseRedirect(instance.get_absolute_url())
-    return render(request, "post_form.html", {
+    return render(request, "posts/post_form.html", {
         "title": instance.title,
         "instance": instance,
         "form": form,
