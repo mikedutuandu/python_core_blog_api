@@ -20,8 +20,8 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="thumbnail">
-        {% if obj.image %}
-         <img src='{{ obj.image.url }}' class='img-responsive' />
+        {% if obj.image_small %}
+         <img src='{{ obj.image_small.url }}' class='img-responsive' />
         {% endif %}
       <div class="caption post-detail-item">
         {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}

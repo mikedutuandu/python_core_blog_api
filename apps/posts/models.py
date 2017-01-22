@@ -10,6 +10,8 @@ from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 
 from markdown_deux import markdown
@@ -52,6 +54,11 @@ class Post(models.Model):
             blank=True, 
             width_field="width_field", 
             height_field="height_field")
+    image_small = ImageSpecField(source='image',
+                                      processors=[ResizeToFill(100, 100)],
+                                      format='JPEG',
+                                      options={'quality': 60})
+
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
     content = models.TextField()
