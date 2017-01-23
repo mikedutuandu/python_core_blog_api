@@ -83,7 +83,7 @@ def post_list(request):
     today = timezone.now().date()
     queryset_list = Post.objects.active()  # .order_by("-timestamp")
     if request.user.is_staff or request.user.is_superuser:
-        queryset_list = Post.objects.all()
+        queryset_list = Post.objects.select_related('user').all()
 
     query = request.GET.get("q")
     if query:
@@ -92,8 +92,8 @@ def post_list(request):
             Q(content__icontains=query) |
             Q(user__first_name__icontains=query) |
             Q(user__last_name__icontains=query)
-        ).distinct()
-    paginator = Paginator(queryset_list, 1)  # Show 25 contacts per page
+        ).select_related('user').distinct()
+    paginator = Paginator(queryset_list, 4)  # Show 25 contacts per page
     page_request_var = "page"
     page = request.GET.get(page_request_var)
     try:

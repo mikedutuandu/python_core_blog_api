@@ -28,7 +28,7 @@ from .utils import get_read_time
 class PostManager(models.Manager):
     def active(self, *args, **kwargs):
         # Post.objects.all() = super(PostManager, self).all()
-        return super(PostManager, self).filter(draft=False).filter(publish__lte=timezone.now())
+        return super(PostManager, self).filter(draft=False).filter(publish__lte=timezone.now()).select_related('user')
 
 
 def upload_location(instance, filename):

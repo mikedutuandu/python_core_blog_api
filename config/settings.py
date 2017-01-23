@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap_pagination',
     'imagekit',
     'storages',
+    'debug_toolbar',
 
     # local apps
     'apps.comments',
@@ -65,6 +66,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 LOGIN_URL = "/login/"
@@ -170,6 +172,13 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 # AWS_ACCESS_KEY_ID=''
 # AWS_SECRET_ACCESS_KEY=''
 # AWS_STORAGE_BUCKET_NAME =''
+
+# Debug
+def show_tool_debug(request):
+    return True
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK':'config.settings.show_tool_debug',
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
