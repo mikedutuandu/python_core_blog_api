@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # local apps
     'apps.comments',
     'apps.posts',
+    # 'apps.vuivcl',
 
 ]
 
