@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import datetime
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -199,7 +200,7 @@ REST_FRAMEWORK = {
         #'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
 }
-import datetime
+
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
     'rest_framework_jwt.utils.jwt_encode_handler',
