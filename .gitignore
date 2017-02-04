@@ -7,6 +7,7 @@ apps/posts/migrations/__pycache__/
 apps/posts/templatetags/__pycache__/
 apps/accounts/__pycache__/
 apps/accounts/api/__pycache__/
+apps/accounts/migrations/__pycache__/
 apps/comments/__pycache__/
 apps/comments/migrations/__pycache__/
 apps/comments/api/__pycache__/

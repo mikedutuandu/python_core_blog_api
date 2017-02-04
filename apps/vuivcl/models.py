@@ -12,15 +12,16 @@ from .utils import Utils
 
 
 
+
 #1. Post---
 class PostManager(models.Manager):
     def active(self, *args, **kwargs):
         return super(PostManager, self).filter(draft=False).filter(publish__lte=timezone.now())
 
 class Post(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.SET_NULL)
-    category =models.ForeignKey('Category',on_delete=models.SET_NULL)
-    title = models.CharField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,on_delete=models.SET_NULL,null=True)
+    category =models.ForeignKey('Category',on_delete=models.SET_NULL,null=True)
+    title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
     IMAGE = 'IM'
     YOUTUBE = 'YO'
@@ -103,6 +104,11 @@ class Category(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     enabled = models.BooleanField(default=True)
+    def __unicode__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
