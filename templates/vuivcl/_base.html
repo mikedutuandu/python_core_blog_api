@@ -1,0 +1,58 @@
+{% load staticfiles %}
+{% load inclusion_tags %}
+<!DOCTYPE HTML>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VUIVCL</title>
+    <link rel='stylesheet' id='boombox-icomoon-style-css' href='{% static "vuivcl/css/style.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='boombox-fonts-css' href='{% static "vuivcl/css/css.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='boombox-primary-style-css' href='{% static "vuivcl/css/style.min.css" %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' href='{% static "vuivcl/css/custom.css" %}' type='text/css' media='all'/>
+</head>
+<body class="page-template-default page page-id-83 zombify-light nsfw-post has-full-post-button badge-face-text badges-outside-right no-js">
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+{% nav_mobile %}
+<div class="page-wrapper">
+    {% nav_web %}
+    <div id="mainContainer" role="main">
+
+        <div class="container narrow-content">
+
+            {% block content %}{% endblock content %}
+            {% sidebar_list %}
+        </div>
+        <div id="sticky-border"></div>
+    </div>
+    {% include 'vuivcl/_footer.html' %}
+</div>
+
+{% block js %}
+    <script type='text/javascript' src='{% static "vuivcl/js/jquery.js" %}'></script>
+    <script type='text/javascript'>var boombox_gif_event = "click";</script>
+    <script type='text/javascript' src='{% static "vuivcl/js/scripts.min.js" %}'></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type='text/javascript' src='{% static "el-pagination/js/el-pagination.js" %}'></script>
+    <script>
+        $.endlessPaginate({
+            paginateOnScroll: true,
+            paginateOnScrollChunkSize: 2
+        });
+    </script>
+{% endblock js %}
+</body>
+</html>

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'imagekit',
     'storages',
     'debug_toolbar',
+    'el_pagination',
 
     # local apps
     'apps.comments',
@@ -176,6 +177,9 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 # AWS_ACCESS_KEY_ID=''
 # AWS_SECRET_ACCESS_KEY=''
 # AWS_STORAGE_BUCKET_NAME =''
+
+#paging
+EL_PAGINATION_PER_PAGE = 1
 
 # Debug
 def show_tool_debug(request):

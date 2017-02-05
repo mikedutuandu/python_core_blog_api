@@ -16,6 +16,7 @@ from .utils import Utils
 #1. Post---
 class PostManager(models.Manager):
     def active(self, *args, **kwargs):
+        return super(PostManager, self).all()
         return super(PostManager, self).filter(draft=False).filter(publish__lte=timezone.now())
 
 class Post(models.Model):
@@ -81,15 +82,15 @@ class Media(models.Model):
                               blank=True,
                                 )
     image_thumb1 = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(100, 100)],
+                                 processors=[ResizeToFill(545, 364)],
                                  format='JPEG',
                                  options={'quality': 60})
     image_thumb2 = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(500, 500)],
+                                 processors=[ResizeToFill(348, 174)],
                                  format='JPEG',
                                  options={'quality': 60})
     image_thumb3 = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(1000, 1000)],
+                                 processors=[ResizeToFill(762, 508)],
                                  format='JPEG',
                                  options={'quality': 60})
     youtube = models.URLField(null=True,blank=True)

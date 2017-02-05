@@ -1,0 +1,88 @@
+    <header id="header" class="header clearfix  top-logo no-bottom fixed-header fixed-top">
+        <div class="top clearfix narrow menu-left">
+            <div class="container">
+                <div class="mobile-box">
+                    <div id="branding" class="branding"><h1 class="site-title"><a href="../index.html"> <img
+                            src="../wp-content/uploads/sites/3/2016/08/bb_logo3_2x04d9.png?x46754"
+                            srcset="http://boombox.px-lab.com/demo3/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 2x,http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 1x"
+                            alt="BoomBox: Another GAG"/> </a></h1></div>
+                    <div class="account-box">
+                        <div class="wrapper">
+                            <div class="top-search">
+                                <button class="form-toggle js-toggle"></button>
+                                <form role="search" method="get" class="search-form form"
+                                      action="http://boombox.px-lab.com/another-gag/"><input type="search" name="s"
+                                                                                             placeholder="Search and hit enter"
+                                                                                             value=""></form>
+                            </div>
+                            <div class="user-box "><a class="js-authentication" href="#sign-in"><i
+                                    class="icon-user"></i></a></div>
+                            <a class="create-post icon zf-create-popup" href="#"><i class="icon-plus_bb"></i> Upload</a>
+                            <button id="menu-button" class="menu-button icon-bars"></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="branding" class="branding"><h1 class="site-title"><a href="../index.html"> <img
+                        src="../wp-content/uploads/sites/3/2016/08/bb_logo3_2x04d9.png?x46754"
+                        srcset="http://boombox.px-lab.com/demo3/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 2x,http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 1x"
+                        alt="BoomBox: Another GAG"/> </a></h1></div>
+                <div class="account-box">
+                    <div class="wrapper">
+                        <div class="top-search">
+                            <button class="form-toggle js-toggle"></button>
+                            <form role="search" method="get" class="search-form form"
+                                  action="http://boombox.px-lab.com/another-gag/"><input type="search" name="s"
+                                                                                         placeholder="Search and hit enter"
+                                                                                         value=""></form>
+                        </div>
+                        <div class="user-box "><a class="js-authentication" href="#sign-in"><i
+                                class="icon-user"></i></a></div>
+                        <a class="create-post icon zf-create-popup" href="#"><i class="icon-plus_bb"></i> Upload</a>
+                    </div>
+                </div>
+                <div class="navigation-box">
+                    <div class="wrapper">
+                        <div class="nav">
+                            <nav class="main-navigation">
+                                <ul id="menu-top-header-navigation-1" class="">
+
+                                    {% for category in categories %}
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-83 current_page_item menu-item-90 menu-item-icon">
+                                        <a href="index.html"><i class="icon icon-hot"></i>{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <div class="share-menu-item"><a class="share-icon icon-share2 js-inline-popup"
+                                                        href="#social-box"></a>
+                            <div id="social-box" class="social-box inline-popup"><h4 class="title">Connect with us</h4>
+                                <div class="social circle">
+                                    <ul>
+                                        <li><a class="icon-facebook" href="https://www.facebook.com/" title="Facebook"
+                                               target="_blank"></a></li>
+                                        <li><a class="icon-google-plus" href="https://plus.google.com/" title="Google+"
+                                               target="_blank"></a></li>
+                                        <li><a class="icon-instagram" href="https://www.instagram.com/"
+                                               title="Instagram" target="_blank"></a></li>
+                                        <li><a class="icon-twitter" href="https://twitter.com/?lang=en" title="Twitter"
+                                               target="_blank"></a></li>
+                                        <li><a class="icon-youtube" href="https://youtube.com/" title="Youtube"
+                                               target="_blank"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="popup-footer">
+                                    <div class="community"><span class="logo"> <img
+                                            src="../wp-content/uploads/sites/3/2016/08/thumbnail04d9.png?x46754"
+                                            alt="BoomBox: Another GAG"> </span> <span
+                                            class="text">BoomBox Community</span> <a
+                                            class="create-post bb-btn bb-btn-default icon zf-create-popup" href="#"><i
+                                            class="icon-plus_bb"></i> Upload</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="go-top" class="go-top"> <i class="icon icon-arrow-up"></i> </span></header>
