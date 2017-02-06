@@ -25,12 +25,14 @@ def post_detail(request, slug=None):
     })
 
 
-def post_list(request,template='vuivcl/post_list.html',page_template='vuivcl/post_list_page.html'):
-    context = {
-        'entry_list': Post.objects.all(),
-        'page_template': page_template,
-    }
+def post_list(request):
+    template = 'vuivcl/post_list.html'
+    page_template = 'vuivcl/post_list_page.html'
+    posts = Post.objects.all()
     if request.is_ajax():
         template = page_template
-    return render(request,template,context)
+    return render(request,template,{
+        'entry_list': posts,
+        'page_template': page_template,
+    })
 

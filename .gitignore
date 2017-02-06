@@ -20,3 +20,5 @@ apps/comments/.DS_Store
 apps/__pycache__/
 apps/vuivcl/__pycache__/
 apps/vuivcl/migrations/__pycache__/
+apps/vuivcl/templatetags/__pycache__/
+

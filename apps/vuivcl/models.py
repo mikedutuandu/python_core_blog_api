@@ -7,7 +7,7 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+from imagekit.processors import ResizeToFill,Thumbnail
 from .utils import Utils
 
 
@@ -55,6 +55,10 @@ class Post(models.Model):
     def media(self):
         qs = Media.objects.filter(post=self)
         return qs
+    @property
+    def media_first(self):
+        qs = Media.objects.filter(post=self).first()
+        return qs
 
     class Meta:
         ordering = ["-created_date", "-updated_date"]
@@ -82,17 +86,17 @@ class Media(models.Model):
                               blank=True,
                                 )
     image_thumb1 = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(545, 364)],
+                                 processors=[Thumbnail(545)],
                                  format='JPEG',
-                                 options={'quality': 60})
+                                 options={'quality': 100})
     image_thumb2 = ImageSpecField(source='image',
                                  processors=[ResizeToFill(348, 174)],
                                  format='JPEG',
-                                 options={'quality': 60})
+                                 options={'quality': 100})
     image_thumb3 = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(762, 508)],
+                                 processors=[Thumbnail(762)],
                                  format='JPEG',
-                                 options={'quality': 60})
+                                 options={'quality': 100})
     youtube = models.URLField(null=True,blank=True)
 
 
