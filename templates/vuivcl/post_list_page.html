@@ -21,16 +21,15 @@
                     <div class="author vcard ">
                         <div class="avatar circle-frame"><a
                                 href="#"><img
-                                src="http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/avatars/27/5800fef981fab-bpthumb.jpg?x46754"
+                                src="{{ entry.user.userprofile.avatar_thumb.url }}"
                                 class="avatar user-25-avatar avatar-66 photo" width="66" height="66"
                                 alt="Kathy Newman"/></a></div>
                         <div class="author-info"><span class="byline">By <a class="url fn n"
-                                                                            href="#"><span>Kathy Newman</span></a></span>
+                                                                            href="#"><span>{{ entry.user.username }}</span></a></span>
                         </div>
                     </div>
                     <span class="posted-on"><time class="entry-date published"
-                                                  datetime="2016-08-12T21:49:06+00:00">5 months ago</time><time
-                            class="entry-date updated mf-hide" datetime="2016-10-15T23:25:23+00:00">3 months ago</time></span>
+                                                  datetime="2016-08-12T21:49:06+00:00">{{ entry.created_date|timesince }} ago</time></span>
                 </div>
                 <div class="fb-like" data-href="{{ entry.absolute_url }}" data-layout="standard"
                      data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

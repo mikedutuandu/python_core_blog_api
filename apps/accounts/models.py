@@ -12,7 +12,7 @@ class UserProfile(models.Model):
                               blank=True,
                                 )
     avatar_thumb = ImageSpecField(source='avatar',
-                                 processors=[ResizeToFill(100, 100)],
+                                 processors=[ResizeToFill(40, 40)],
                                  format='JPEG',
                                  options={'quality': 60})
 

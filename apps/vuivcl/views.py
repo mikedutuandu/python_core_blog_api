@@ -23,7 +23,18 @@ def post_detail(request, slug=None):
 def post_list(request):
     template = 'vuivcl/post_list.html'
     page_template = 'vuivcl/post_list_page.html'
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_date')
+    if request.is_ajax():
+        template = page_template
+    return render(request,template,{
+        'entry_list': posts,
+        'page_template': page_template,
+    })
+def post_category_list(request,slug=None):
+    template = 'vuivcl/post_list.html'
+    page_template = 'vuivcl/post_list_page.html'
+    category = get_object_or_404(Category, slug=slug)
+    posts = Post.objects.all().filter(category=category).order_by('-created_date')
     if request.is_ajax():
         template = page_template
     return render(request,template,{

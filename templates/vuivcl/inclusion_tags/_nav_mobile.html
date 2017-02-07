@@ -8,7 +8,7 @@
                     {% for category in categories %}
                     <li id="menu-item-90"
                         class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-83 current_page_item menu-item-90 menu-item-icon">
-                        <a href="index.html">{{ category.name }}</a></li>
+                        <a href="{% url 'vuivcl:category_list' category.slug %}">{{ category.name }}</a></li>
                     {% endfor %}
 
                 </ul>
