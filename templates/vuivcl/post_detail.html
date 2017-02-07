@@ -37,10 +37,12 @@
                                              class="attachment-boombox_image768 size-boombox_image768 wp-post-image"
                                              alt="" play="1"
                                              sizes="(max-width: 768px) 100vw, 768px"></div>
-            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard"
+            <div class="fb-like" data-href="{{ post.absolute_url }}" data-layout="standard"
                  data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+
+            <div class="fb-comments" data-href="{{ post.absolute_url }}"
                  data-numposts="5"></div>
+            <div class="fb-comments" data-href="{{ post.absolute_url }}" data-numposts="5"></div>
         </article>
     </div>
 
