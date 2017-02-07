@@ -5,38 +5,11 @@
             <div class="more-menu-header"></div>
             <nav class="main-navigation">
                 <ul id="menu-top-header-navigation" class="">
+                    {% for category in categories %}
                     <li id="menu-item-90"
                         class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-83 current_page_item menu-item-90 menu-item-icon">
-                        <a href="index.html"><i class="icon icon-hot"></i>Hot</a></li>
-                    <li id="menu-item-89"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89 menu-item-icon"><a
-                            href="../trending-list/index.html"><i class="icon icon-trending"></i>Trending</a></li>
-                    <li id="menu-item-33"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 menu-item-icon"><a
-                            href="../fresh/index.html"><i class="icon icon-clock-o"></i>Fresh</a></li>
-                    <li id="menu-item-24"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24"><a
-                            href="../category/geeky/index.html">Geeky</a></li>
-                    <li id="menu-item-25"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a
-                            href="../category/gif/index.html">GIF</a></li>
-                    <li id="menu-item-27"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a
-                            href="../category/pokemon-go/index.html">Pokemon GO<span class="label hot">hot</span></a>
-                    </li>
-                    <li id="menu-item-26"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a
-                            href="../category/nsfw/index.html">NSFW</a></li>
-                    <li id="menu-item-111"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-111"><a
-                            href="../category/rio-2016/index.html">Rio 2016<span class="label new">new</span></a></li>
-                    <li id="menu-item-28"
-                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a
-                            href="../category/wtf/index.html">WTF</a></li>
-                    <li id="menu-item-320"
-                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-320"><a
-                            href="https://themeforest.net/item/boombox-viral-buzz-wordpress-theme/16596434?ref=PX-lab">Buy</a>
-                    </li>
+                        <a href="index.html">{{ category.name }}</a></li>
+                    {% endfor %}
 
                 </ul>
             </nav>

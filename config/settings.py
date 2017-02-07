@@ -179,7 +179,8 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 # AWS_STORAGE_BUCKET_NAME =''
 
 #paging
-EL_PAGINATION_PER_PAGE = 1
+EL_PAGINATION_PER_PAGE = 10
+EL_PAGINATION_LOADING = '<img src="/static/vuivcl/img/loader.gif" alt="loading" />'
 
 # Debug
 def show_tool_debug(request):

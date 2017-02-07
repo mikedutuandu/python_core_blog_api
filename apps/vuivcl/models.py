@@ -108,6 +108,7 @@ class Media(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
+    icon = models.CharField(max_length=250,null=True)
     enabled = models.BooleanField(default=True)
     def __unicode__(self):
         return self.name

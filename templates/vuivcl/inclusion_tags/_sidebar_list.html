@@ -2,43 +2,29 @@
 
 
     <section id="boombox-picked-posts-2" class="widget widget_picked_entries"><h2 class="widget-title">
-        BoomBox Pick</h2>
+        Hot Hot Hot...</h2>
         <ul>
-
+            {% for post in posts %}
             <li>
                 <article class="post ">
-                    <div class="post-thumbnail"><a href="../%d0%b5verything-is-relative/index.html"
-                                                   title="Everything is relative"> <img width="360"
+                    <div class="post-thumbnail"><a href="#"
+                                                   title="Everything is relative">
+                        <img width="360"
                                                                                         height="180"
-                                                                                        src="http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/meme1-360x180.jpg?x46754"
+                                                                                        src="{{ post.media_first.image_thumb2.url }}"
                                                                                         class="attachment-boombox_image360x180 size-boombox_image360x180 wp-post-image"
                                                                                         alt=""/>
 
                     </a></div>
                     <div class="content">
                         <div class="entry-header"><h3 class="entry-title"><a
-                                href="../%d0%b5verything-is-relative/index.html">Everything is relative</a>
+                                href="#">{{ post.title }}</a>
                         </h3></div>
                     </div>
                 </article>
             </li>
-            <li>
-                <article class="post ">
-                    <div class="post-thumbnail"><a href="../%d0%b5verything-is-relative/index.html"
-                                                   title="Everything is relative"> <img width="360"
-                                                                                        height="180"
-                                                                                        src="http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/meme1-360x180.jpg?x46754"
-                                                                                        class="attachment-boombox_image360x180 size-boombox_image360x180 wp-post-image"
-                                                                                        alt=""/>
+            {% endfor %}
 
-                    </a></div>
-                    <div class="content">
-                        <div class="entry-header"><h3 class="entry-title"><a
-                                href="../%d0%b5verything-is-relative/index.html">Everything is relative</a>
-                        </h3></div>
-                    </div>
-                </article>
-            </li>
 
         </ul>
     </section>

@@ -354,3 +354,23 @@ img, video, .captcha-container, .header .account-box .user-box:hover .menu, .pos
 .badge.trending .text {
     color: #1f1f1f
 }
+
+.endless_more{
+        display: block;
+    line-height: 65px;
+    height: 62px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    margin-bottom: 50px;
+    text-align: center;
+    background: #09f;
+    color:white;
+}
+.endless_loading{
+    text-align: center;
+}
