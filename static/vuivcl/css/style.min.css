@@ -8732,8 +8732,7 @@ section.error-404 .image {
   max-width: 40%;
 }
 #footer .footer-bottom .copy-right {
-  float: right;
-  max-width: 20%;
+  text-align: center;
 }
 #footer.top-bg {
   margin-top: 25px;

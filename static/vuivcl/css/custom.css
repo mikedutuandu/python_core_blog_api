@@ -374,3 +374,35 @@ img, video, .captcha-container, .header .account-box .user-box:hover .menu, .pos
 .endless_loading{
     text-align: center;
 }
+
+.author-meta .author{
+    display: inline-block;
+}
+ .view-meta {
+    text-align: right;
+    margin-top: 9px;
+}
+ .post-meta-info {
+    padding: 0 0 20px;
+}
+ .post-meta {
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+ .post-meta .avatar {
+    float: left;
+    margin-right: 15px;
+    padding-top: 0  !important;
+    width: 40px !important;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.post.single .byline {
+    padding: 11px 0 9px;
+    font-size: 14px;
+}
+.post.single .byline a {
+    font-size: 18px;
+}

@@ -354,3 +354,11 @@ img, video, .captcha-container, .header .account-box .user-box:hover .menu, .pos
 .badge.trending .text {
     color: #1f1f1f
 }
+
+.author-meta {
+    display: inline-block;
+}
+ .view-meta {
+    text-align: right;
+    margin-top: 9px;
+}
