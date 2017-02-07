@@ -3,9 +3,9 @@
 {% for entry in entry_list %}
     <article id="post-130"
              class="post post-130 type-post status-publish format-standard has-post-thumbnail hentry category-geeky category-lol category-news tag-news">
-        <h2 class="entry-title"><a href="../shoot-the-deputy/index.html" rel="bookmark">{{ entry.title }}</a></h2>
+        <h2 class="entry-title"><a href="{{ entry.absolute_url }}" rel="bookmark">{{ entry.title }}</a></h2>
         <div class="post-thumbnail">
-            <a href="../shoot-the-deputy/index.html" title="Dog Days of Summer">
+            <a href="{{ entry.absolute_url }}" title="Dog Days of Summer">
                 <img width="545"
                      height="364"
                      src="{{ entry.media_first.image_thumb1.url }}"

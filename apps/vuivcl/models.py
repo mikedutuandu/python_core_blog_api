@@ -49,7 +49,7 @@ class Post(models.Model):
 
     @property
     def absolute_url(self):
-        return reverse("posts:detail", kwargs={"slug": self.slug})
+        return reverse("vuivcl:detail", kwargs={"slug": self.slug})
 
     @property
     def media(self):

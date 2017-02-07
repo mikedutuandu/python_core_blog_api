@@ -7,7 +7,7 @@
             {% for post in posts %}
             <li>
                 <article class="post ">
-                    <div class="post-thumbnail"><a href="#"
+                    <div class="post-thumbnail"><a href="{{ post.absolute_url }}"
                                                    title="Everything is relative">
                         <img width="360"
                                                                                         height="180"
@@ -18,7 +18,7 @@
                     </a></div>
                     <div class="content">
                         <div class="entry-header"><h3 class="entry-title"><a
-                                href="#">{{ post.title }}</a>
+                                href="{{ post.absolute_url }}">{{ post.title }}</a>
                         </h3></div>
                     </div>
                 </article>

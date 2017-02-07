@@ -1,10 +1,10 @@
-    <header id="header" class="header clearfix  top-logo no-bottom fixed-header fixed-top">
+{% load staticfiles %}
+<header id="header" class="header clearfix  top-logo no-bottom fixed-header fixed-top">
         <div class="top clearfix narrow menu-left">
             <div class="container">
                 <div class="mobile-box">
-                    <div id="branding" class="branding"><h1 class="site-title"><a href="../index.html"> <img
-                            src="../wp-content/uploads/sites/3/2016/08/bb_logo3_2x04d9.png?x46754"
-                            srcset="http://boombox.px-lab.com/demo3/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 2x,http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 1x"
+                    <div id="branding" class="branding"><h1 class="site-title"><a href="{% url 'vuivcl:list' %}"> <img
+                            src="{% static 'vuivcl/img/logo.png' %}"
                             alt="BoomBox: Another GAG"/> </a></h1></div>
                     <div class="account-box">
                         <div class="wrapper">
@@ -22,9 +22,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="branding" class="branding"><h1 class="site-title"><a href="../index.html"> <img
-                        src="../wp-content/uploads/sites/3/2016/08/bb_logo3_2x04d9.png?x46754"
-                        srcset="http://boombox.px-lab.com/demo3/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 2x,http://boombox.px-lab.com/another-gag/wp-content/uploads/sites/3/2016/08/bb_logo3_2x.png 1x"
+                <div id="branding" class="branding"><h1 class="site-title"><a href="{% url 'vuivcl:list' %}"> <img
+                        src="{% static 'vuivcl/img/logo.png' %}"
                         alt="BoomBox: Another GAG"/> </a></h1></div>
                 <div class="account-box">
                     <div class="wrapper">

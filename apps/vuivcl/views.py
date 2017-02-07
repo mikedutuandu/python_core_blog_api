@@ -14,14 +14,9 @@ from .models import Post,Category,Media
 
 
 def post_detail(request, slug=None):
-    # instance = get_object_or_404(Post, slug=slug)
-    # if instance.publish > timezone.now().date() or instance.draft:
-    #     if not request.user.is_staff or not request.user.is_superuser:
-    #         raise Http404
-
+    post = get_object_or_404(Post, slug=slug)
     return render(request, "vuivcl/post_detail.html", {
-        # "title": instance.title,
-        # "instance": instance,
+        "post": post,
     })
 
 
