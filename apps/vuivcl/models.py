@@ -114,6 +114,12 @@ class Media(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
 
 
+    def __unicode__(self):
+        return ''
+
+
+    def __str__(self):
+        return ''
 
 #3. Category---
 class Category(models.Model):
