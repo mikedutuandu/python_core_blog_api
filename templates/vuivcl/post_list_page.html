@@ -6,11 +6,24 @@
         <h2 class="entry-title"><a href="{{ entry.absolute_url }}" rel="bookmark">{{ entry.title }}</a></h2>
         <div class="post-thumbnail">
             <a href="{{ entry.absolute_url }}" title="Dog Days of Summer">
-                <img width="545"
-                     height="364"
-                     src="{{ entry.media_first.image_thumb1.url }}"
-                     class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
-                /></a>
+                {% if entry.media_first.media_type == 'IM' %}
+                    <img src="{{ entry.media_first.image_thumb1.url }}"
+                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                    />
+                {% elif entry.media_first.media_type == 'VI' %}
+                    <video width="545" autoplay>
+                        <source src="{{ entry.media_first.video.url }}" type="video/mp4">
+                    </video>
+                {% elif entry.media_first.media_type == 'GI' %}
+                    <img width="545" src="{{ entry.media_first.gif.url }}"
+                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                    />
+                {% elif entry.media_first.media_type == 'YO' %}
+                    <iframe width="545" height="350"
+                    src="{{ entry.media_first.youtube }}">
+                    </iframe>
+                {% endif %}
+            </a>
             <a class="view-full-post" href="../shoot-the-deputy/index.html"> <span
                     class="bb-btn bb-btn-primary">View Full Post</span> </a></div>
         <div class="content">

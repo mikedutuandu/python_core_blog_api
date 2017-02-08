@@ -5,34 +5,50 @@
         Hot Hot Hot...</h2>
         <ul>
             {% for post in posts %}
-            <li>
-                <article class="post ">
-                    <div class="post-thumbnail"><a href="{{ post.absolute_url }}"
-                                                   title="Everything is relative">
-                        <img width="360"
-                                                                                        height="180"
-                                                                                        src="{{ post.media_first.image_thumb2.url }}"
-                                                                                        class="attachment-boombox_image360x180 size-boombox_image360x180 wp-post-image"
-                                                                                        alt=""/>
+                <li>
+                    <article class="post ">
+                        <div class="post-thumbnail"><a href="{{ post.absolute_url }}"
+                                                       title="Everything is relative">
 
-                    </a></div>
-                    <div class="content">
-                        <div class="entry-header"><h3 class="entry-title"><a
-                                href="{{ post.absolute_url }}">{{ post.title }}</a>
-                        </h3></div>
-                    </div>
-                </article>
-            </li>
+                            {% if post.media_first.media_type == 'IM' %}
+                                <img width="360"
+                                     height="180" src="{{ post.media_first.image_thumb2.url }}"
+                                     class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                                />
+                            {% elif post.media_first.media_type == 'VI' %}
+                                <video width="400" height="200" autoplay>
+                                    <source src="{{ post.media_first.video.url }}" type="video/mp4">
+                                </video>
+                            {% elif post.media_first.media_type == 'GI' %}
+                                <img width="360"
+                                     height="180" src="{{ post.media_first.gif.url }}"
+                                     class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                                />
+                            {% elif post.media_first.media_type == 'YO' %}
+                                <iframe width="360"
+                                        height="180"
+                                        src="{{ post.media_first.youtube }}">
+                                </iframe>
+                            {% endif %}
+
+                        </a></div>
+                        <div class="content">
+                            <div class="entry-header"><h3 class="entry-title"><a
+                                    href="{{ post.absolute_url }}">{{ post.title }}</a>
+                            </h3></div>
+                        </div>
+                    </article>
+                </li>
             {% endfor %}
 
 
         </ul>
     </section>
-{#    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="360"#}
-{#         data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"#}
-{#         data-show-facepile="true">#}
-{#        <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a#}
-{#                href="https://www.facebook.com/facebook">Facebook</a></blockquote>#}
-{#    </div>#}
+    {#    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="360"#}
+    {#         data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"#}
+    {#         data-show-facepile="true">#}
+    {#        <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a#}
+    {#                href="https://www.facebook.com/facebook">Facebook</a></blockquote>#}
+    {#    </div>#}
 
 </aside>

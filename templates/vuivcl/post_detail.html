@@ -27,22 +27,36 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="view-meta">
-                            <div class="views"><i class="icon icon-eye"></i><span class="count">{{ post.viewed_number }}k</span></div>
+                            <div class="views"><i class="icon icon-eye"></i><span class="count">{{ post.viewed_number }}k</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="post-thumbnail"><img width="768" height="512"
-                                             src="{{ post.media_first.image_thumb3.url }}"
-                                             class="attachment-boombox_image768 size-boombox_image768 wp-post-image"
-                                             alt="" play="1"
-                                             sizes="(max-width: 768px) 100vw, 768px"></div>
+            <div class="post-thumbnail">
+                {% if post.media_first.media_type == 'IM' %}
+                    <img width="768" src="{{ post.media_first.image_thumb3.url }}"
+                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                    />
+                {% elif post.media_first.media_type == 'VI' %}
+                    <video width="800" autoplay>
+                        <source src="{{ post.media_first.video.url }}" type="video/mp4">
+                    </video>
+                {% elif post.media_first.media_type == 'GI' %}
+                    <img width="768" src="{{ post.media_first.gif.url }}"
+                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                    />
+                {% elif post.media_first.media_type == 'YO' %}
+                      <iframe width="768" height="400"
+                                        src="{{ post.media_first.youtube }}">
+                                </iframe>
+                {% endif %}
+
+            </div>
             <div class="fb-like" data-href="{{ post.absolute_url }}" data-layout="standard"
                  data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
-            <div class="fb-comments" data-href="{{ post.absolute_url }}"
-                 data-numposts="5"></div>
-            <div class="fb-comments" data-href="{{ post.absolute_url }}" data-numposts="5"></div>
+            <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
         </article>
     </div>
 

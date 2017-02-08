@@ -26,11 +26,13 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     IMAGE = 'IM'
     YOUTUBE = 'YO'
+    VIDEO = 'VI'
     GIF = 'GI'
     LIST_TYPE = (
         (IMAGE,'IMAGE'),
         (YOUTUBE,'YOUTUBE'),
-        (GIF,'GIF'),
+        (VIDEO,'VIDEO'),
+        (GIF, 'GIF'),
     )
     post_type = models.CharField(max_length=2,choices=LIST_TYPE,default=None)
     viewed_number = models.IntegerField()
@@ -74,10 +76,12 @@ def upload_location(instance, filename):
 class Media(models.Model):
     IMAGE = 'IM'
     YOUTUBE = 'YO'
+    VIDEO = 'VI'
     GIF = 'GI'
     LIST_TYPE = (
         (IMAGE,'IMAGE'),
         (YOUTUBE,'YOUTUBE'),
+        (VIDEO,'VIDEO'),
         (GIF,'GIF'),
     )
     media_type = models.CharField(max_length=2,choices=LIST_TYPE,default=IMAGE)
@@ -97,6 +101,13 @@ class Media(models.Model):
                                  processors=[Thumbnail(762)],
                                  format='JPEG',
                                  options={'quality': 100})
+
+    video = models.FileField(upload_to=upload_location,
+                              null=True,
+                              blank=True)
+    gif = models.FileField(upload_to=upload_location,
+                              null=True,
+                              blank=True)
     youtube = models.URLField(null=True,blank=True)
 
 
