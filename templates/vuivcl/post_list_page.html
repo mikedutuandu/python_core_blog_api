@@ -6,23 +6,26 @@
         <h2 class="entry-title"><a href="{{ entry.absolute_url }}" rel="bookmark">{{ entry.title }}</a></h2>
         <div class="post-thumbnail">
             <a href="{{ entry.absolute_url }}" title="Dog Days of Summer">
-                {% if entry.media_first.media_type == 'IM' %}
-                    <img src="{{ entry.media_first.image_thumb1.url }}"
-                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
-                    />
-                {% elif entry.media_first.media_type == 'VI' %}
-                    <video width="545" autoplay>
-                        <source src="{{ entry.media_first.video.url }}" type="video/mp4">
-                    </video>
-                {% elif entry.media_first.media_type == 'GI' %}
-                    <img width="545" src="{{ entry.media_first.gif.url }}"
-                         class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
-                    />
-                {% elif entry.media_first.media_type == 'YO' %}
-                    <iframe width="545" height="350"
-                    src="{{ entry.media_first.youtube }}">
-                    </iframe>
-                {% endif %}
+
+            {% for media in entry.media %}
+                    {% if media.media_type == 'IM' %}
+                        <img style="margin-bottom: 5px;" src="{{ media.image_thumb1.url }}"
+                             class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                        />
+                    {% elif media.media_type == 'VI' %}
+                        <video style="margin-bottom: 5px;" width="545" autoplay>
+                            <source src="{{ media.video.url }}" type="video/mp4">
+                        </video>
+                    {% elif media.media_type == 'GI' %}
+                        <img style="margin-bottom: 5px;" width="545" src="{{ media.gif.url }}"
+                             class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
+                        />
+                    {% elif media.media_type == 'YO' %}
+                        <iframe  style="margin-bottom: 5px;" width="545" height="350"
+                        src="{{ media.youtube }}">
+                        </iframe>
+                    {% endif %}
+                {% endfor %}
             </a>
             <a class="view-full-post" href="../shoot-the-deputy/index.html"> <span
                     class="bb-btn bb-btn-primary">View Full Post</span> </a></div>

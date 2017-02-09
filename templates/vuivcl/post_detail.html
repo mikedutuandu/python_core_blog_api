@@ -34,23 +34,25 @@
                 </div>
             </div>
             <div class="post-thumbnail">
-                {% if post.media_first.media_type == 'IM' %}
-                    <img width="768" src="{{ post.media_first.image_thumb3.url }}"
+            {% for media in post.media %}
+                {% if media.media_type == 'IM' %}
+                    <img style="margin-bottom: 5px;" width="768" src="{{ media.image_thumb3.url }}"
                          class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
                     />
-                {% elif post.media_first.media_type == 'VI' %}
-                    <video width="800" autoplay>
-                        <source src="{{ post.media_first.video.url }}" type="video/mp4">
+                {% elif media.media_type == 'VI' %}
+                    <video style="margin-bottom: 5px;" width="800" autoplay>
+                        <source src="{{ media.video.url }}" type="video/mp4">
                     </video>
-                {% elif post.media_first.media_type == 'GI' %}
-                    <img width="768" src="{{ post.media_first.gif.url }}"
+                {% elif media.media_type == 'GI' %}
+                    <img style="margin-bottom: 5px;" width="768" src="{{ media.gif.url }}"
                          class="attachment-boombox_image545 size-boombox_image545 wp-post-image"
                     />
-                {% elif post.media_first.media_type == 'YO' %}
-                      <iframe width="768" height="400"
-                                        src="{{ post.media_first.youtube }}">
+                {% elif media.media_type == 'YO' %}
+                      <iframe style="margin-bottom: 5px;" width="768" height="400"
+                                        src="{{ media.youtube }}">
                                 </iframe>
                 {% endif %}
+             {% endfor %}
 
             </div>
             <div class="fb-like" data-href="{{ post.absolute_url }}" data-layout="standard"
