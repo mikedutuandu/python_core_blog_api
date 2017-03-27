@@ -70,27 +70,6 @@ class CommentDetailAPIView(DestroyModelMixin, UpdateModelMixin, RetrieveAPIView)
         return self.destroy(request, *args, **kwargs)
 
 
-
-# class PostUpdateAPIView(RetrieveUpdateAPIView):
-#     queryset = Post.objects.all()
-#     serializer_class = PostCreateUpdateSerializer
-#     lookup_field = 'slug'
-#     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
-#     #lookup_url_kwarg = "abc"
-#     def perform_update(self, serializer):
-#         serializer.save(user=self.request.user)
-#         #email send_email
-
-
-
-# class PostDeleteAPIView(DestroyAPIView):
-#     queryset = Post.objects.all()
-#     serializer_class = PostDetailSerializer
-#     lookup_field = 'slug'
-#     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
-#     #lookup_url_kwarg = "abc"
-
-
 class CommentListAPIView(ListAPIView):
     serializer_class = CommentListSerializer
     permission_classes = [AllowAny]
