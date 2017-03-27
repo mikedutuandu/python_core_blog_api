@@ -3,12 +3,15 @@
 config/__pycache__/
 apps/posts/__pycache__/
 apps/posts/api/__pycache__/
+apps/posts/migrations/
 apps/posts/migrations/__pycache__/
 apps/posts/templatetags/__pycache__/
 apps/accounts/__pycache__/
 apps/accounts/api/__pycache__/
+apps/accounts/migrations/
 apps/accounts/migrations/__pycache__/
 apps/comments/__pycache__/
+apps/comments/migrations/
 apps/comments/migrations/__pycache__/
 apps/comments/api/__pycache__/
 apps/posts/.DS_Store
@@ -18,7 +21,5 @@ apps/.DS_Store
 apps/accounts/.DS_Store
 apps/comments/.DS_Store
 apps/__pycache__/
-apps/vuivcl/__pycache__/
-apps/vuivcl/migrations/__pycache__/
-apps/vuivcl/templatetags/__pycache__/
+
 

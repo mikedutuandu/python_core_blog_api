@@ -29,19 +29,19 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #Tutorial------------------------
-    # url(r'^comments/', include("apps.comments.urls", namespace='comments')),
-    # url(r'^register/', register_view, name='register'),
-    # url(r'^login/', login_view, name='login'),
-    # url(r'^logout/', logout_view, name='logout'),
-    # url(r'^', include("apps.posts.urls", namespace='posts')),
-    # url(r'^api/auth/token/', obtain_jwt_token),
-    # url(r'^api/users/', include("apps.accounts.api.urls", namespace='users-api')),
-    # url(r'^api/comments/', include("apps.comments.api.urls", namespace='comments-api')),
-    # url(r'^api/posts/', include("apps.posts.api.urls", namespace='posts-api')),
+    url(r'^register/', register_view, name='register'),
+    url(r'^login/', login_view, name='login'),
+    url(r'^logout/', logout_view, name='logout'),
 
-    #Vuivcl--------------------------
-    url(r'^', include("apps.vuivcl.urls", namespace='vuivcl')),
-    #Shop
+    url(r'^', include("apps.posts.urls", namespace='posts')),
+    url(r'^comments/', include("apps.comments.urls", namespace='comments')),
+
+
+    url(r'^api/auth/token/', obtain_jwt_token),
+    url(r'^api/users/', include("apps.accounts.api.urls", namespace='users-api')),
+    url(r'^api/comments/', include("apps.comments.api.urls", namespace='comments-api')),
+    url(r'^api/posts/', include("apps.posts.api.urls", namespace='posts-api')),
+
 ]
 
 if settings.DEBUG:

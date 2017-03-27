@@ -5,6 +5,7 @@ boto3==1.4.4
 botocore==1.5.4
 django-appconf==1.0.2
 django-bootstrap-pagination==1.6.2
+django-ckeditor==5.2.1
 django-crispy-forms==1.6.1
 django-debug-toolbar==1.6
 django-el-pagination==3.0.1
