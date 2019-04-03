@@ -42,6 +42,8 @@ urlpatterns = [
     url(r'^api/comments/', include("apps.comments.api.urls", namespace='comments-api')),
     url(r'^api/posts/', include("apps.posts.api.urls", namespace='posts-api')),
 
+    url(r'^api-auth/', include('rest_framework.urls'))
+
 ]
 
 if settings.DEBUG:

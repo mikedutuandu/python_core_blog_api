@@ -96,26 +96,26 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'core-django',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-           'sql_mode': 'STRICT_TRANS_TABLES',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'core-django',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#            'sql_mode': 'STRICT_TRANS_TABLES',
+#         }
+#     }
+# }
 
 
 # Password validation
@@ -197,9 +197,9 @@ REST_FRAMEWORK = {
     #     'rest_framework.parsers.JSONParser',
     # )
     "DEFAULT_AUTHENTICATION_CLASSES": (
-         # 'rest_framework.authentication.SessionAuthentication',
+         'rest_framework.authentication.SessionAuthentication',
          'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        #'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.BasicAuthentication'
 
     ), 
     "DEFAULT_PERMISSION_CLASSES": (
