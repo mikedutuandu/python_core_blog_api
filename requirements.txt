@@ -7,7 +7,7 @@ django-appconf==1.0.2
 django-bootstrap-pagination==1.6.2
 django-ckeditor==5.2.1
 django-crispy-forms==1.6.1
-django-debug-toolbar==1.6
+django-debug-toolbar==1.11.1
 django-el-pagination==3.0.1
 django-imagekit==3.3
 django-markdown-deux==1.0.5
